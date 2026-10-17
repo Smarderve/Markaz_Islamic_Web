@@ -1,0 +1,36 @@
+# Local research and unpublished media
+/markaz-research/
+/Markaz-Instagram-Media/
+/assets/markaz/
+/Browser-Captures/
+/Full-Archive/
+/Extracted-Photos/
+/Private-Research/
+/Local-Backups/
+
+# Runtime and build output
+/node_modules/
+/dist/
+/build/
+/coverage/
+/playwright-report/
+/test-results/
+
+# Local environments and secrets
+.venv*/
+venv/
+.env
+.env.*
+!.env.example
+*.session
+*.session-*
+**/cookies*.txt
+**/token*.txt
+**/credentials*.json
+**/secrets*.json
+auth-state*.json
+playwright/.auth/
+
+# Recovered planning originals are local-only
+/docs/reference/MARKAZ_ONE_COMPLETE_WEBSITE_DESIGN_STRUCTURE.md
+/docs/reference/MARKAZ_ONE_COMPLETE_SCHOOL_WEBSITE_MASTER_PLAN.md
