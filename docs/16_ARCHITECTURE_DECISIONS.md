@@ -3,7 +3,7 @@
 This file stores **accepted decisions**, not a brainstorming document. Change a decision only with an explicit approved alternative, reason, risks and migration plan.
 
 ## ADR-001 — React-based website
-**Accepted (user):** React frontend. **Proposed implementation:** TypeScript + Vite + React Router v7 framework mode/static pre-render. **Verification:** current repo inspection/POC required before finalizing exact router tooling.
+**Accepted (user):** React frontend. **Verified in Phase 01 foundation (2026-10-17):** TypeScript + Vite + React Router v7 framework mode with static pre-render. Nine technical sample routes (English, Kiswahili, Arabic home/Primary/Secondary) built and emitted as static HTML. This verifies the initial routing/prerender approach, not full 14-page coverage or production-host behavior. Reassess compatibility when implementing the complete route set.
 
 ## ADR-002 — No CMS, database or portals
 **Accepted (user):** content stored in local reviewed files; edits require code/content change and rebuild. CMS, database, admissions portal, accounts, payment and document-upload capabilities out of scope. Older planning document references to CMS are superseded.

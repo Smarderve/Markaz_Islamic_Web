@@ -8,6 +8,19 @@
 /Private-Research/
 /Local-Backups/
 
+# Application-local dependencies, generated files, caches, and secrets
+**/node_modules/
+**/build/
+**/dist/
+**/coverage/
+**/.react-router/
+**/.vite/
+**/playwright-report/
+**/test-results/
+**/.env
+**/.env.*
+!**/.env.example
+
 # Runtime and build output
 /node_modules/
 /dist/

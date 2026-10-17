@@ -4,7 +4,7 @@ This file is the repository instruction entry point. Read docs/00_DOCUMENT_MAP.m
 
 ## Mission
 
-Plan an independent, unofficial informational website concept for two school identities. This repository is documentation only; it does not establish school endorsement, publication permission, or that a website exists.
+Develop an independent, unofficial informational website concept for two school identities according to approved phases. The repository includes planning documents and a Phase 01 technical foundation; neither establishes school endorsement, publication permission, nor a complete public website.
 
 ## Planning decisions
 
@@ -29,5 +29,5 @@ Plan an independent, unofficial informational website concept for two school ide
 1. Inspect existing files and the approved phase before implementation.
 2. Work only within the phase explicitly authorized.
 3. Preserve existing work and report conflicts instead of restarting.
-4. Do not install dependencies, commit, push, deploy, or publish without explicit approval.
+4. Install dependencies only where the approved phase authorizes it. Commit, push, deploy, or publish only with explicit approval.
 5. Report exact changes and evidence; do not claim builds, visual QA, license clearance, or authorization without performing and verifying them.
