@@ -77,6 +77,23 @@ const resources = {
       typeDirection: "Latin and Arabic type sample",
       typeSample: "Clarity with purpose · وضوح وغاية",
       footerDisclosure: "Unofficial concept · no school endorsement implied",
+      siteMetaTitle: "Markaz Islamic Schools | Unofficial website preview",
+      siteMetaDescription:
+        "A draft informational website concept for Markaz Islamic Schools. Content remains under school and translation review.",
+      homeMetaTitle: "Markaz Islamic Schools | School information",
+      homeMetaDescription:
+        "Explore a draft introduction to Markaz Islamic Schools, with Primary and Secondary education presented within one institution.",
+      primaryMetaTitle: "Primary Education | Markaz Islamic Schools",
+      primaryMetaDescription:
+        "Draft information about Primary Education at Markaz Islamic Schools.",
+      secondaryMetaTitle: "Secondary Education | Markaz Islamic Schools",
+      secondaryMetaDescription:
+        "Draft information about Secondary Education at Markaz Islamic Schools.",
+      notFoundTitle: "Page not found",
+      notFoundDescription: "The page you requested could not be found.",
+      errorTitle: "Page unavailable",
+      errorDescription: "The page could not be loaded. Please try again later.",
+      returnHome: "Return to the home page",
       heroSchoolTitle: "One educational offering, presented together.",
       institutionLabel: "INDEPENDENT MARKAZ WEBSITE CONCEPT",
       conceptTag: "DESIGN STUDY · 2026",
@@ -230,6 +247,23 @@ const resources = {
       typeDirection: "Mfano wa maandishi ya Kilatini na Kiarabu",
       typeSample: "Uwazi wenye kusudi · وضوح وغاية",
       footerDisclosure: "Dhana isiyo rasmi · haimaanishi kuidhinishwa na shule",
+      siteMetaTitle: "Markaz Islamic Schools | Muhtasari wa tovuti isiyo rasmi",
+      siteMetaDescription:
+        "Dhana ya rasimu ya tovuti ya taarifa kuhusu Markaz Islamic Schools. Maudhui yanasubiri mapitio ya shule na ya tafsiri.",
+      homeMetaTitle: "Markaz Islamic Schools | Taarifa za shule",
+      homeMetaDescription:
+        "Utangulizi wa rasimu kuhusu Markaz Islamic Schools, unaowasilisha elimu ya msingi na sekondari ndani ya taasisi moja.",
+      primaryMetaTitle: "Elimu ya Msingi | Markaz Islamic Schools",
+      primaryMetaDescription:
+        "Taarifa za rasimu kuhusu elimu ya msingi katika Markaz Islamic Schools.",
+      secondaryMetaTitle: "Elimu ya Sekondari | Markaz Islamic Schools",
+      secondaryMetaDescription:
+        "Taarifa za rasimu kuhusu elimu ya sekondari katika Markaz Islamic Schools.",
+      notFoundTitle: "Ukurasa haujapatikana",
+      notFoundDescription: "Ukurasa ulioomba haujapatikana.",
+      errorTitle: "Ukurasa haupatikani",
+      errorDescription: "Ukurasa haukuweza kupakiwa. Tafadhali jaribu tena baadaye.",
+      returnHome: "Rudi kwenye ukurasa wa mwanzo",
       heroSchoolTitle: "Taasisi moja ya elimu, ikiwasilishwa pamoja.",
       institutionLabel: "DHANA HURU YA TOVUTI YA SHULE",
       conceptTag: "UTAFITI WA MUUNDO · 2026",
@@ -390,6 +424,24 @@ const resources = {
       typeDirection: "مِثَالٌ لِلْخَطَّيْنِ اللَّاتِينِيِّ وَالْعَرَبِيِّ",
       typeSample: "وُضُوحٌ وَغَايَةٌ · Clarity with purpose",
       footerDisclosure: "تَصَوُّرٌ غَيْرُ رَسْمِيٍّ · لَا يَعْنِي اعْتِمَادَ الْمَدْرَسَةِ",
+      siteMetaTitle: "مُعَايَنَةُ مَوْقِعٍ غَيْرِ رَسْمِيٍّ · Markaz Islamic Schools",
+      siteMetaDescription:
+        "مُعَايَنَةٌ مَسَوَّدَةٌ لِمَوْقِعٍ تَعْرِيفِيٍّ عَنْ Markaz Islamic Schools. مَا زَالَ الْمُحْتَوَى قَيْدَ مُرَاجَعَةِ الْمَدْرَسَةِ وَالتَّرْجَمَةِ.",
+      homeMetaTitle: "مَعْلُومَاتٌ عَنْ Markaz Islamic Schools",
+      homeMetaDescription:
+        "مُقَدِّمَةٌ مَسَوَّدَةٌ عَنْ Markaz Islamic Schools، وَتَعْرِضُ التَّعْلِيمَ الِابْتِدَائِيَّ وَالثَّانَوِيَّ ضِمْنَ مُؤَسَّسَةٍ وَاحِدَةٍ.",
+      primaryMetaTitle: "التَّعْلِيمُ الِابْتِدَائِيُّ · Markaz Islamic Schools",
+      primaryMetaDescription:
+        "مَعْلُومَاتٌ مَسَوَّدَةٌ عَنِ التَّعْلِيمِ الِابْتِدَائِيِّ فِي Markaz Islamic Schools. الْمُحْتَوَى قَيْدَ الْمُرَاجَعَةِ.",
+      secondaryMetaTitle: "التَّعْلِيمُ الثَّانَوِيُّ · Markaz Islamic Schools",
+      secondaryMetaDescription:
+        "مَعْلُومَاتٌ مَسَوَّدَةٌ عَنِ التَّعْلِيمِ الثَّانَوِيِّ فِي Markaz Islamic Schools. الْمُحْتَوَى قَيْدَ الْمُرَاجَعَةِ.",
+      notFoundTitle: "لَمْ تُوجَدِ الصَّفْحَةُ",
+      notFoundDescription: "لَمْ نَجِدِ الصَّفْحَةَ الَّتِي طَلَبْتَهَا.",
+      errorTitle: "الصَّفْحَةُ غَيْرُ مُتَاحَةٍ",
+      errorDescription:
+        "تَعَذَّرَ تَحْمِيلُ الصَّفْحَةِ. يُرْجَى الْمُحَاوَلَةُ مَرَّةً أُخْرَى لَاحِقًا.",
+      returnHome: "عُدْ إِلَى الصَّفْحَةِ الرَّئِيسِيَّةِ",
       heroSchoolTitle: "عَرْضٌ مُوَحَّدٌ لِلْمَرَاحِلِ التَّعْلِيمِيَّةِ.",
       institutionLabel: "تَصَوُّرٌ مُسْتَقِلٌّ لِمَوْقِعٍ مَدْرَسِيٍّ",
       conceptTag: "دِرَاسَةُ تَصْمِيمٍ · ٢٠٢٦",

@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build": "pnpm run validate:translations && react-router build",
     "dev": "react-router dev",
     "preview:static": "node scripts/serve-static.mjs",
     "typecheck": "react-router typegen && tsc --noEmit",
+    "validate:translations": "node scripts/translation-audit.mjs",
     "lint": "eslint .",
     "format:check": "prettier --check \"app/**/*.{ts,tsx,css}\" \"scripts/**/*.mjs\" \"tests/**/*.ts\" \"*.{json,js,ts}\"",
     "test": "vitest run",

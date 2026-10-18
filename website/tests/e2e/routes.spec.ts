@@ -78,6 +78,55 @@ test("locale selection preserves the current school route", async ({ page }) => 
   );
 });
 
+test("the site root takes the explicit English route", async ({ page }) => {
+  await page.goto("/");
+  await expect(page).toHaveURL(/\/en\/$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+});
+
+test("draft locales expose localized metadata and stay out of public indexing", async ({
+  page,
+}) => {
+  const expectedTitles = {
+    en: "Primary Education | Markaz Islamic Schools",
+    sw: "Elimu ya Msingi | Markaz Islamic Schools",
+    ar: "التَّعْلِيمُ الِابْتِدَائِيُّ · Markaz Islamic Schools",
+  };
+  for (const locale of ["en", "sw", "ar"] as const) {
+    await page.goto(`/${locale}/primary/`);
+    await expect(page).toHaveTitle(expectedTitles[locale]);
+    await expect(page.locator('meta[name="description"]')).not.toHaveAttribute("content", "");
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      "noindex,nofollow",
+    );
+    await expect(page.locator("html")).toHaveAttribute("data-locale-review-status", "draft");
+    await expect(page.locator('link[rel="canonical"], link[hreflang]')).toHaveCount(0);
+  }
+});
+
+test("invalid level routes show a localized error and return link", async ({ page }) => {
+  await page.goto("/ar/not-a-level/");
+  await expect(page.locator("html")).toHaveAttribute("lang", "ar");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("لَمْ تُوجَدِ الصَّفْحَةُ");
+  await expect(
+    page.getByRole("link", { name: "عُدْ إِلَى الصَّفْحَةِ الرَّئِيسِيَّةِ" }),
+  ).toHaveAttribute("href", "/ar/");
+});
+
+test("EN, SW and AR routes render at tablet width", async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  for (const route of routes.filter((item) => item.path.endsWith("/"))) {
+    await page.goto(route.path);
+    await expect(page.locator("html")).toHaveAttribute("lang", route.locale);
+    await expect(page.locator("html")).toHaveAttribute("dir", route.dir);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+  }
+});
+
 test("Academics menu opens from the keyboard and level links fit inside the viewport", async ({
   page,
 }) => {

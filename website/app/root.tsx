@@ -5,19 +5,26 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useMatches,
+  useLocation,
 } from "react-router";
+import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
+import { getLocaleI18n, isLocale } from "~/i18n";
+import { localeReviewStatus } from "~/i18n/review-status";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const locale = useMatches().find((match) => match.params.locale)?.params.locale ?? "en";
+  const localeSegment = useLocation().pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(localeSegment) ? localeSegment : "en";
+  const reviewStatus = localeReviewStatus[locale];
   return (
     <html
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
-      data-arabic-translation-review={locale === "ar" ? "draft" : undefined}
+      data-locale-review-status={reviewStatus}
+      data-arabic-translation-review={locale === "ar" ? reviewStatus : undefined}
     >
       <head>
         <meta charSet="utf-8" />
@@ -39,28 +46,17 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
-
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404 ? "The requested page could not be found." : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
-  }
+  const localeSegment = useLocation().pathname.split("/").filter(Boolean)[0];
+  const locale = isLocale(localeSegment) ? localeSegment : "en";
+  const { t } = useTranslation(undefined, { i18n: getLocaleI18n(locale) });
+  const notFound = isRouteErrorResponse(error) && error.status === 404;
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="localized-error" lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+      <p className="section-kicker">MARKAZ ISLAMIC SCHOOLS</p>
+      <h1>{t(notFound ? "notFoundTitle" : "errorTitle")}</h1>
+      <p>{t(notFound ? "notFoundDescription" : "errorDescription")}</p>
+      <Link to={`/${locale}/`}>{t("returnHome")}</Link>
     </main>
   );
 }

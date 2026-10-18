@@ -21,9 +21,16 @@ const server = createServer((request, response) => {
     return;
   }
   if (existsSync(file) && statSync(file).isDirectory()) file = resolve(file, "index.html");
-  if (!existsSync(file) || !file.startsWith(root)) {
-    response.writeHead(404).end("Not found");
+  if (!file.startsWith(root)) {
+    response.writeHead(403).end("Forbidden");
     return;
+  }
+  if (!existsSync(file)) {
+    if (extname(pathname)) {
+      response.writeHead(404).end("Not found");
+      return;
+    }
+    file = resolve(root, "index.html");
   }
   response.writeHead(200, { "Content-Type": types[extname(file)] ?? "application/octet-stream" });
   createReadStream(file).pipe(response);

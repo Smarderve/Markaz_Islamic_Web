@@ -7,7 +7,36 @@ import { InstitutionHeader } from "~/components/markaz/institution-header";
 import BlurText from "~/components/markaz/motion/BlurText";
 import FadeContent from "~/components/markaz/motion/FadeContent";
 import { InView } from "~/components/ui/in-view";
-import { getLocaleI18n } from "~/i18n";
+import { getLocaleI18n, isLocale, locales } from "~/i18n";
+import { localeReviewStatus } from "~/i18n/review-status";
+import type { Route } from "./+types/home";
+
+export const meta: Route.MetaFunction = ({ params }) => {
+  const locale = isLocale(params.locale) ? params.locale : "en";
+  const { t } = getLocaleI18n(locale);
+  const approved = localeReviewStatus[locale] === "approved";
+  const publishedLocales = locales.filter(
+    (candidate) => localeReviewStatus[candidate] === "approved",
+  );
+  return [
+    { title: t("homeMetaTitle") },
+    { name: "description", content: t("homeMetaDescription") },
+    { property: "og:title", content: t("homeMetaTitle") },
+    { property: "og:description", content: t("homeMetaDescription") },
+    { name: "robots", content: approved ? "index,follow" : "noindex,nofollow" },
+    ...(approved
+      ? [
+          { tagName: "link" as const, rel: "canonical", href: `/${locale}/` },
+          ...publishedLocales.map((candidate) => ({
+            tagName: "link" as const,
+            rel: "alternate",
+            hrefLang: candidate,
+            href: `/${candidate}/`,
+          })),
+        ]
+      : []),
+  ];
+};
 
 const learningAreas = ["academics", "islamicEducation", "schoolLife"] as const;
 
