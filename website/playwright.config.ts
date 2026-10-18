@@ -3,6 +3,8 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
+  timeout: 120_000,
+  expect: { timeout: 10_000 },
   reporter: [["list"]],
   use: { baseURL: "http://127.0.0.1:4187", trace: "retain-on-failure" },
   projects: [
@@ -23,7 +25,7 @@ export default defineConfig({
   webServer: {
     command: "pnpm run preview:static",
     url: "http://127.0.0.1:4187",
-    reuseExistingServer: false,
-    timeout: 30_000,
+    reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
   },
 });

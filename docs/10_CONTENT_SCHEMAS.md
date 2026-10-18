@@ -4,7 +4,7 @@ This is the proposed shape for build-time public data; adapt to existing reposit
 
 ```ts
 type Locale = 'en' | 'sw' | 'ar';
-type School = 'primary' | 'secondary' | 'both';
+type EducationLevel = 'primary' | 'secondary' | 'both';
 type Evidence = 'officially-verified' | 'school-account-reported'
   | 'partially-verified' | 'historical-notice' | 'unknown';
 type Approval = 'draft' | 'internal-review' | 'approved' | 'rejected';
@@ -16,7 +16,7 @@ type Translation = {
   status: TranslationState; reviewedBy?: string; reviewedOn?: string;
 };
 interface BaseContent {
-  id: string; school: School; slug: string; sourceIds: string[];
+  id: string; educationLevel: EducationLevel; slug: string; sourceIds: string[];
   evidence: Evidence; approval: Approval;
   translations: Partial<Record<Locale, Translation>>;
   mediaIds: string[]; lastReviewedOn?: string;
@@ -31,12 +31,12 @@ interface EventRecord extends BaseContent {
   status: 'announced' | 'outcome-confirmed' | 'cancelled' | 'unknown';
 }
 interface ExamRecord {
-  exam: 'CSEE'|'FTNA'|'EDK'; year: number; school: School;
+  exam: 'CSEE'|'FTNA'|'EDK'; year: number; educationLevel: EducationLevel;
   centreId?: string; candidates: number; divisions: Record<string,number>;
   sourceIds: string[]; evidence: Evidence; approval: Approval;
 }
 interface MediaRecord {
-  id: string; school: School; srcOriginal: string; srcWeb?: string;
+  id: string; educationLevel: EducationLevel; srcOriginal: string; srcWeb?: string;
   sourceUrl?: string; sourcePostId?: string; width: number; height: number;
   rightsApproved: boolean; childSafeguardingApproved: boolean;
   locationVerified: boolean; mediaApproval: Approval;

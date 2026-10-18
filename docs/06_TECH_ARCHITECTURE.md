@@ -14,7 +14,7 @@ Proposal, **not proof of existing repository state**. Phase 00 discovers whether
 **No CMS. No database. No runtime Node server requirement.** Never claim a contact form works without a backend.
 
 ## Routing and build
-Canonical language prefixes: `/en/`, `/sw/`, `/ar/`. Proposed stable pathname slugs in English (`/ar/academics/` is okay) while visible titles are translated. School-specific routes `/en/primary/` and `/en/secondary/`; article `/en/news/:slug/`; event `/en/events/:slug/`. Preserve article/event identity across locales and provide equivalent routes only when their translations are truly publishable.
+Canonical language prefixes: `/en/`, `/sw/`, `/ar/`. Proposed stable pathname slugs in English (`/ar/academics/` is okay) while visible titles are translated. Educational-level views use the established `/en/primary/` and `/en/secondary/` paths; these remain under the shared institutional shell. Article `/en/news/:slug/`; event `/en/events/:slug/`. Preserve article/event identity across locales and provide equivalent routes only when their translations are truly publishable.
 
 React Router static pre-rendering is documented at `https://reactrouter.com/how-to/pre-rendering`; **do not ship SPA-only HTML placeholders** for important indexing routes. Enumerate all 42 core routes plus approved details at build time, fail on route/translation mismatch, ensure refresh/direct access works on chosen host.
 
@@ -23,10 +23,10 @@ React Router static pre-rendering is documented at `https://reactrouter.com/how-
 website/
   app/
     routes/                 # localized page modules
-    layouts/                # shared shell, school, editorial/article
+    layouts/                # shared institutional shell, educational-level, editorial/article
     components/ui/          # selected shadcn primitives
     components/markaz/      # branded controls and motion wrappers
-    features/               # schools/news/events/gallery/search
+    features/               # education levels/news/events/gallery/search
     i18n/                   # configuration and locale selection
     lib/                    # types, validation, metadata, helpers
     styles/                 # CSS token and typography layers

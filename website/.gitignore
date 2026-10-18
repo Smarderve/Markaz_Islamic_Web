@@ -5,3 +5,5 @@
 # React Router
 /.react-router/
 /build/
+/public/__local-review-media/
+/visual-review/

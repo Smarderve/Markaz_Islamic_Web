@@ -14,7 +14,11 @@ import "./app.css";
 export function Layout({ children }: { children: React.ReactNode }) {
   const locale = useMatches().find((match) => match.params.locale)?.params.locale ?? "en";
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      data-arabic-translation-review={locale === "ar" ? "draft" : undefined}
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

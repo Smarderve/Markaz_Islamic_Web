@@ -11,7 +11,7 @@ Read existing files, inspect git status/branches, identify current package/proje
 ## Inspect specifically
 - Existing project root versus `website/` directory; prior app code, file names, build output, framework versions and uncommitted work.
 - Current authorized local evidence held separately from this public repository; verify its date, status, and relevance.
-- Approved school logos, actual brand hex values, current primary/secondary naming/relationship, contact readiness and media permissions.
+- Approved institutional logo, actual brand hex values, source-backed Primary/Secondary educational-level naming, verified admissions/progression conditions, contact readiness and media permissions.
 - Whether React Router framework mode/static prerender suits existing code; current Node/npm versions, OS constraints, git remote and deployment assumptions.
 - Docs conflicts, duplicate files, outdated instructions such as CMS, EN/SW-only language switches or source snapshots.
 

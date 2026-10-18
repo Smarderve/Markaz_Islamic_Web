@@ -5,8 +5,8 @@ This public copy provides structural guidance only. Detailed draft copy, source 
 1. Home
 2. About
 3. History
-4. Primary
-5. Secondary
+4. Primary Education (educational-level view within the unified institution)
+5. Secondary Education (educational-level view within the unified institution)
 6. Academics
 7. Islamic Education
 8. School Life
@@ -18,6 +18,8 @@ This public copy provides structural guidance only. Detailed draft copy, source 
 14. Contact
 
 ## Shared design requirements
+
+The global site architecture has one institutional identity and one navigation system: Home; About Markaz; Academics (Primary Education, Secondary Education, Academic Results); Islamic Education; School Life; News & Events; Admissions; Contact. Implemented preview destinations must work; sections awaiting pages or approved content must be clearly identified as in preparation and must not link to empty pages. The Primary and Secondary routes are level views inside the shared shell, not separate brands.
 
 Use responsive editorial page structures, accessible navigation, clear source/approval workflows, semantic data tables where relevant, and meaningful route titles. Keep factual content in an approved content layer; do not add claims, dates, results, contacts, facilities, or school relationships without current evidence and approval.
 

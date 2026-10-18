@@ -8,7 +8,7 @@ This roadmap is a **proposed execution order**. The documentation package itself
 | 01 | Architecture and React foundation | Existing work preserved; run-ready Vite/React Router TS, quality scripts, static prerender POC |
 | 02 | Markaz brand design + motion primitives | Tokens, navigation, controls, animations, accessible motion examples and RTL-ready foundations |
 | 03 | 3-language infrastructure | Localized URLs, complete shell, Arabic RTL, translated metadata, build-time gate |
-| 04 | Flagship pages | Home, Primary, Secondary at 360/768/1440; original hybrid editorial layouts; approval screenshots |
+| 04 | Flagship pages | Home, Primary Education, Secondary Education within one institution at 360/768/1440; original hybrid editorial layouts; approval screenshots |
 | 05 | Remaining static pages | About, History, Academics, Islamic Education, School Life, Achievements, Admissions, Contact |
 | 06 | Publishing features, without CMS | News and event archives/detail pages, local search, gallery, media approval gate |
 | 07 | Advanced motion + full localization | Carefully verified effects across pages; text/RTL/keyboard/reduced-motion QA |

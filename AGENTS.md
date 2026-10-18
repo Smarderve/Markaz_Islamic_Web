@@ -4,7 +4,9 @@ This file is the repository instruction entry point. Read docs/00_DOCUMENT_MAP.m
 
 ## Mission
 
-Develop an independent, unofficial informational website concept for two school identities according to approved phases. The repository includes planning documents and a Phase 01 technical foundation; neither establishes school endorsement, publication permission, nor a complete public website.
+Develop one independent, unofficial informational website concept for MARKAZ ISLAMIC SCHOOLS. Primary Education and Secondary Education are educational levels presented within the same institutional website, not separate school brands. This presentation does not assert unverified administrative, legal, campus, admissions, or automatic progression relationships. The repository includes planning documents and a Phase 01 technical foundation; neither establishes school endorsement, publication permission, nor a complete public website.
+
+The homepage introduces Markaz as a school and leads into its verified information. Primary and Secondary are ordinary Academics destinations, not the main homepage story or a signature selector experience.
 
 ## Planning decisions
 
